@@ -30,6 +30,11 @@ public class TestBooking {
         resultShouldBe(270, cashier.account(Books.A, Books.B, Books.C));
     }
 
+    @Test
+    public void buy_4_Diff_Books_Cost_320_With_20_Per_Discount() {
+        resultShouldBe(320, cashier.account(Books.A, Books.B, Books.C, Books.D));
+    }
+
     private void resultShouldBe(int expected, int cost) {
         assertEquals(expected, cost);
     }
