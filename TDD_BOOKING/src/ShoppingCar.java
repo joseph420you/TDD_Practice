@@ -7,8 +7,10 @@ import java.util.Set;
  */
 public class ShoppingCar {
     private Set<Books> filter;
+    private Books[] books;
 
     public ShoppingCar(Books... books) {
+        this.books = books;
         this.filter = new HashSet<Books>(Arrays.asList(books));
     }
 
@@ -29,5 +31,9 @@ public class ShoppingCar {
 
     public int getDiffBookAmount() {
         return filter.size();
+    }
+
+    public int getSameBookAmount() {
+        return books.length - filter.size();
     }
 }

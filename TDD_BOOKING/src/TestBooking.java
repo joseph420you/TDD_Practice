@@ -50,6 +50,15 @@ public class TestBooking {
         resultShouldBe(200, cashier.account(Books.A, Books.A));
     }
 
+    @Test
+    public void buy_Same_5_Books_In_A_Set_For_2_Sets_Cost_875_With_25_Discount_To_1_Set() {
+        //第1~5集各買兩本
+        resultShouldBe(875, cashier.account(
+                Books.A, Books.B, Books.C, Books.D, Books.E,
+                Books.A, Books.B, Books.C, Books.D, Books.E
+        ));
+    }
+
     private void resultShouldBe(int expected, int cost) {
         assertEquals(expected, cost);
     }
