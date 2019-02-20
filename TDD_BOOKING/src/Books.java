@@ -6,5 +6,6 @@ public enum Books {
     B,
     C,
     D,
-    E
+    E,
+    F,
 }
